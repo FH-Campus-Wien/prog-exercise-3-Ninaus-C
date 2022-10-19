@@ -13,4 +13,20 @@ public class App {
         // print their results
         // etc.
     }
+    public static void oneMonthCalendar(int days, int firstday) {
+
+        int i;
+
+        for (i = 0; i < firstday-1; i++)
+            System.out.print("   ");
+
+        for (i = 1; i <= days; i++) {
+            if (i<10)
+                System.out.print(" " + i + " ");
+            else
+                System.out.print(i + " ");
+            if ((firstday + i-1)%7 == 0)
+                System.out.println();
+        }
+    }
 }
