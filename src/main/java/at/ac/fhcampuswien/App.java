@@ -130,4 +130,26 @@ public class App {
         }
         return builder.toString();
     }
+    public static int checkDigit(int[] code) {
+        int product = 0;
+
+        for (int i = 0; i < code.length; i++) {
+            product += code[i]*(i+2);
+        }
+        int temp = product%11;
+
+        int checksum = 11 - temp;
+
+        switch (checksum) {
+            case 10:
+                checksum=0;
+                break;
+            case 11:
+                checksum=5;
+                break;
+            default: break;
+        }
+        return checksum;
+
+    }
 }
